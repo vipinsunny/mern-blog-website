@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
+mongoose.set("strictQuery", false);
 
 mongoose.connect(
   "mongodb+srv://vipinsunny:Giftofgod%401013@cluster0.adpwkns.mongodb.net/MERN-Blog?retryWrites=true&w=majority"
@@ -57,12 +58,16 @@ app.post("/login", async (req, res) => {
 });
 
 app.get("/profile", (req, res) => {
-  const { token } = req.cookies;
+  const token = req.headers.authorization.split(" ")[1]; // Extract token from Authorization header
   jwt.verify(token, secret, {}, (err, info) => {
-    if (err) throw err;
+    if (err) {
+      // Handle token verification error
+      return res.status(401).json({ error: "Invalid token" });
+    }
     res.json(info);
   });
 });
+
 
 app.post("/logout", (req, res) => {
   res.cookie("token", "").json("ok");
