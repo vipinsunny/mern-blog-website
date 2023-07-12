@@ -17,7 +17,7 @@ const secret = "asdfe45we45w345wegw345werjktjwertkj";
 app.use(
   cors({
     credentials: true,
-    origin: "https://myblog-mern-blog-website.onrender.com",
+    origin: "myblog-blog-website.netlify.app",
   })
 );
 app.use(express.json());
