@@ -19,5 +19,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vipin Kuriakose Sunny",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vipinsunny/mern-blog-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vipinsunny/mern-blog-website/issues"
+  },
+  "homepage": "https://github.com/vipinsunny/mern-blog-website#readme"
 }
