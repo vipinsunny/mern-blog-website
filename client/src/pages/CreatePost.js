@@ -3,6 +3,7 @@ import "react-quill/dist/quill.snow.css";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "../Editor";
+import { Link } from "react-router-dom";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -31,7 +32,7 @@ export default function CreatePost() {
   }
 
   if (redirect) {
-    return <Navigate to={"/"} />;
+    return <Link to={'/'} />;
   }
   return (
     <form onSubmit={createNewPost}>
