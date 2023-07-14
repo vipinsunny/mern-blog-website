@@ -19,7 +19,7 @@ export default function CreatePost() {
     data.set("file", files[0]);
     ev.preventDefault();
     const response = await fetch(
-      "https://myblog-mern-blog-website.onrender.com/post",
+      "https://localhost:4000/post",
       {
         method: "POST",
         body: data, 
