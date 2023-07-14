@@ -17,7 +17,7 @@
   app.use(
     cors({
       credentials: true,
-      origin: "https://musical-pudding-4c30cc.netlify.app",
+      origin: "*",
     })
   );
   app.use(express.json());
