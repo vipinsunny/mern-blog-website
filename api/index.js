@@ -18,7 +18,7 @@
     cors({
       credentials: true,
       origin:
-        "https://64b0dd480c3c5e06f20743a0--flourishing-haupia-6d8b2f.netlify.app/",
+        "https://flourishing-haupia-6d8b2f.netlify.app",
     })
   );
   app.use(express.json());
