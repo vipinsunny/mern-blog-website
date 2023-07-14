@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Navigate, useParams} from "react-router-dom";
 import Editor from "../Editor";
-
+import baseURL from "../apiConfig"
 export default function EditPost() {
   const {id} = useParams();
   const [title,setTitle] = useState('');
@@ -11,7 +11,7 @@ export default function EditPost() {
   const [redirect,setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch("https://myblog-mern-blog-website.onrender.com/post/" + id).then(
+    fetch(`${baseURL}/post/` + id).then(
       (response) => {
         response.json().then((postInfo) => {
           setTitle(postInfo.title);
@@ -33,7 +33,7 @@ export default function EditPost() {
       data.set('file', files?.[0]);
     }
     const response = await fetch(
-      "https://myblog-mern-blog-website.onrender.com/post",
+      `${baseURL}/post`,
       {
         method: "PUT",
         body: data,
