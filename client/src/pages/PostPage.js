@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
 import { UserContext } from "../UserContext";
 import { Link } from "react-router-dom";
-
+import baseURL from "../apiConfig"
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://myblog-mern-blog-website.onrender.com/${id}`).then(
+    fetch(`${baseURL}${id}`).then(
       (response) => {
         response.json().then((postInfo) => {
           setPostInfo(postInfo);

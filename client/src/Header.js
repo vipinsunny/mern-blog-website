@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
-
+import baseURL from "./apiConfig"
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch("https://myblog-mern-blog-website.onrender.com/profile", {
+    fetch(`${baseURL}/profile, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
